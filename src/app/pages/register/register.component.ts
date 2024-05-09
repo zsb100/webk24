@@ -61,6 +61,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
           } else {
             alert('Sikertelen regisztráció!');
           }
+        }).catch(err => {
+          alert('Sikertelen regisztráció!');
         });
       }
 

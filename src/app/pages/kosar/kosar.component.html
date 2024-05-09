@@ -2,7 +2,16 @@
     <h1>Kosár</h1>
 
     <div class="kosar-items">
-        <p *ngIf="ekszerek.length == 0">A kosár üres.</p>
+        <span *ngIf="ekszerek.length == 0">
+            <p>A kosár üres.</p>
+            <button mat-raised-button color="primary" routerLink="/jewelrys">Kínálatunk megtekintése</button>
+        </span>
+
+        <span *ngIf="!loggedin">
+            <h2 color="warn">A rendeléshez be kell jelentkezni</h2>
+            <button mat-button color="primary" routerLink="/login">Bejelentkezés</button>
+        </span>
+
         <div *ngFor="let item of ekszerek" class="kosar-item">
 
             <div class="kosar-item-img">
@@ -21,12 +30,9 @@
         </div>
     </div>
 
-    <div class="kosar-total">
+    <div class="kosar-total" *ngIf="ekszerek.length != 0">
         <h2>Összesen: {{kosar?.ossz_ar}} Ft</h2>
-        <span *ngIf="!loggedin">
-            <h2 color="warn">A rendeléshez be kell jelentkezni</h2>
-            <button mat-button color="primary" routerLink="/login">Bejelentkezés</button>
-        </span>
+
         <button *ngIf="loggedin" mat-raised-button color="primary" routerLink="/order">Rendelés</button>
     </div>
 </div>

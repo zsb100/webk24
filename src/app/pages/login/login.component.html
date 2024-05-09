@@ -6,7 +6,7 @@
         <form [formGroup]="loginForm" (submit)="login()">
             <mat-form-field>
                 <mat-label for="name">E-mail cím</mat-label>
-                <input matInput formControlName="name" required>
+                <input matInput formControlName="name" type="email" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label for="password">Jelszó</mat-label>

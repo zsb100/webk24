@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth/auth.service';
 
@@ -32,8 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.router.navigate(['/']);
           }
         }
-      ).catch(error => {
-        console.log(error);
+      ).catch(() => {
         alert('Hibás felhasználónév vagy jelszó!');
       });
 

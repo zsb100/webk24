@@ -32,6 +32,7 @@ export class KosarComponent implements OnInit, OnDestroy {
           this.kosardb.getKosar(this.loggedin).subscribe(data => {
             this.kosar = data[0];
             this.getekszerek();
+            localStorage.setItem('kosar', this.kosar.id);
           })
         );
       }));
@@ -64,8 +65,9 @@ export class KosarComponent implements OnInit, OnDestroy {
       this.kosar.ossz_ar -= this.ekszerek[index].ar;
       this.kosar.ekszerIds.splice(index, 1);
       this.ekszerek.splice(index, 1);
-      this.kosardb.update(this.kosar);
+      this.kosardb.update(this.kosar).then(() => {;
       window.location.reload();  
+      });
     }
   }
 

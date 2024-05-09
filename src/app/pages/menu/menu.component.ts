@@ -41,6 +41,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   logOut() {
     this.auth.logout();
+    localStorage.removeItem('user');
     window.location.reload();
   }
 
