@@ -1,0 +1,63 @@
+.kosar-item{
+    display: flex;
+    justify-content: center;
+}
+
+.kosar-item *{
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.kosar-item * button{
+    width: 90%
+}
+
+.kosar-item-img img{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .kosar-item-img{
+        width: 20%;
+        height: auto;
+    }
+    .kosar-item-name{
+        width: 30%;
+        justify-content: center;
+    }
+    .kosar-item-controls{
+        width: 20%;
+        justify-content: center;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .kosar-item-img{
+        width: 30%;
+        height: auto;
+    }
+    .kosar-item-name{
+        width: 40%;
+        justify-content: center;
+    }
+    .kosar-item-controls{
+        display: none;
+    }
+    
+}
+
+.kosar-total{
+    width: 80%;
+    align-self: center;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.kosar-total button{
+    width: 70%;
+}
+
+

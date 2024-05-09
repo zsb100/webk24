@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ek-szer",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

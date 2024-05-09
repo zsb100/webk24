@@ -1,0 +1,23 @@
+<div class="main-content">
+    <h2>Vélemény szerkesztése</h2>
+
+    <span class="loading-indicator" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </span>
+
+    <form [formGroup]="editVelemenyForm">
+        <mat-icon class="star" *ngFor="let i of [1, 2, 3, 4, 5]" (click)="setRating(i)" color="primary">
+            {{ score >= i ? 'star' : 'star_border' }}
+        </mat-icon>
+        <mat-form-field>
+            <textarea matInput placeholder="Vélemény" formControlName="szoveg" value="{{velemeny.szoveg}}" required
+                rows="6"></textarea>
+        </mat-form-field>
+        <mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="save()">Mentés</button>
+            <button mat-button mat-dialog-close>Mégse</button>
+        </mat-dialog-actions>
+    </form>
+
+
+</div>

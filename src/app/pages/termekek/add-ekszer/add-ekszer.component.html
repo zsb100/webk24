@@ -1,0 +1,44 @@
+<div class="main-content">
+
+    <h1>Új ékszer hozzáadása</h1>
+
+    <form [formGroup]="ekszerForm">
+        <mat-form-field>
+            <mat-label for="nev">Ékszer neve</mat-label>
+            <input type="text" matInput formControlName="nev">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label for="ar">Ár</mat-label>
+            <input type="number" matInput formControlName="ar">
+        </mat-form-field>
+
+        <section>
+            <h3>Anyagok:</h3>
+            <p>(Legfeljebb 3 anyag adható meg)</p>
+            <mat-form-field>
+                <mat-label for="anyag1">Anyag (1)</mat-label>
+                <input type="text" matInput formControlName="anyag1">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="anyag2">Anyag (2)</mat-label>
+                <input type="text" matInput formControlName="anyag2">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="anyag3">Anyag (3)</mat-label>
+                <input type="text" matInput formControlName="anyag3">
+            </mat-form-field>
+        </section>
+
+        <input type="file" (change)="onFileSelected($event)">
+
+        <button mat-raised-button color="primary" (click)="uploadFile()">Kép feltöltése</button>
+
+        <section id="controls">
+            <button mat-raised-button color="primary" (click)="addEkszer()">Hozzáadás</button>
+            <button mat-button mat-dialog-close>Mégse</button>
+        </section>
+
+    </form>
+
+</div>

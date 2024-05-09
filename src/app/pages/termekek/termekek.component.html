@@ -1,0 +1,17 @@
+<div class="main-content">
+
+    <h1>Termékeink</h1>
+
+    <button *ngIf="admin" mat-raised-button color="primary" (click)="newEkszer()">Új termék hozzáadása</button>
+
+    <div class="prod-cont">
+        <div class="column" *ngFor="let item of products">
+            <div class="product-card">
+                <img src="{{item.imgLink}}" alt="" class="prod-img">
+                <h2>{{item.nev}}</h2>
+                <button mat-raised-button color="primary" routerLink="/jewelrys/{{item.id}}">Részletek</button>
+            </div>
+        </div>
+    </div>
+
+</div>

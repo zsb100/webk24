@@ -1,0 +1,21 @@
+<div class="main-content">
+
+    <div>
+        <h1>Bejelentkezés</h1>
+
+        <form [formGroup]="loginForm" (submit)="login()">
+            <mat-form-field>
+                <mat-label for="name">E-mail cím</mat-label>
+                <input matInput formControlName="name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="password">Jelszó</mat-label>
+                <input matInput formControlName="password" type="password" required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Bejelentkezés</button>
+            <button mat-raised-button color="accent" routerLink="/register" type="button">Regisztráció</button>
+        </form>
+    </div>
+
+</div>

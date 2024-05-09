@@ -1,0 +1,32 @@
+<div class="main-content">
+    <h1>Kosár</h1>
+
+    <div class="kosar-items">
+        <p *ngIf="ekszerek.length == 0">A kosár üres.</p>
+        <div *ngFor="let item of ekszerek" class="kosar-item">
+
+            <div class="kosar-item-img">
+                <img src="{{item.imgLink}}">
+            </div>
+            <div class="kosar-item-name">
+                <h3>{{item.nev}}</h3>
+                <button mat-raised-button color="warn" (click)="removeItem(item.id)">Törlés</button>
+
+            </div>
+            <div class="kosar-item-controls">
+                <h4>{{item.ar}} Ft</h4>
+                <button mat-raised-button color="primary" routerLink="/jewelrys/{{item.id}}">Részletek</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="kosar-total">
+        <h2>Összesen: {{kosar?.ossz_ar}} Ft</h2>
+        <span *ngIf="!loggedin">
+            <h2 color="warn">A rendeléshez be kell jelentkezni</h2>
+            <button mat-button color="primary" routerLink="/login">Bejelentkezés</button>
+        </span>
+        <button *ngIf="loggedin" mat-raised-button color="primary" routerLink="/order">Rendelés</button>
+    </div>
+</div>

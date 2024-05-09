@@ -1,0 +1,45 @@
+.text {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.img {
+    float: left;
+    padding: 40px;
+    width: 36%;
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+@media screen and (min-width: 768px) {
+    .img {
+        width: 30%;
+        display: flex;
+    }
+    .text{
+        width: 70%;
+    }
+
+    .container{
+        margin: 0 auto;
+        width: 80%;
+    }
+    
+}
+
+.button {
+   text-align: center;
+   margin: 50px auto;
+}
+
+button{
+    padding: 30px;
+    font-size: 1.5rem;
+}

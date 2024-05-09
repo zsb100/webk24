@@ -1,0 +1,62 @@
+.main-content-slide {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/ek-szer.appspot.com/o/slide.png?alt=media&token=7b1d0605-6945-46c3-a3ca-dffdee636254");
+    background-repeat: repeat-x;
+    background-size: 300vh;
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 20px auto;
+    padding: 30px;
+    font-size: 1.5rem;
+}
+
+.button{
+    text-align: center;
+}
+
+.column {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin: 0 auto 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .column {
+        width: 25%;
+        margin: 0 0 25px;
+    }
+}
+
+.product-card {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+
+h2 {
+    margin: 10px 40px;
+}
+
+.prod-img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}

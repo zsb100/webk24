@@ -1,0 +1,28 @@
+<div class="main-content-slide">
+
+</div>
+<div class="main-content">
+    <div class="button">
+        <button mat-raised-button color="primary" routerLink="/jewelrys">Kínálatunk megtekintése</button>
+    </div>
+    <h2>Legújabb termékeink</h2>
+    <div class="container">
+        <div class="column" *ngFor="let item of new">
+            <div class="product-card" routerLink="/jewelrys/{{item.id}}">
+                <img src="{{item.imgLink}}" alt="" class="prod-img">
+                <h3>{{item.nev}}</h3>
+                <h4>{{item.ar}} Ft</h4>
+            </div>
+        </div>
+    </div>
+    <h2>Népszerű termékeink</h2>
+    <div class="container">
+        <div class="column" *ngFor="let item of best">
+            <div class="product-card" routerLink="/jewelrys/{{item.id}}">
+                <img src="{{item.imgLink}}" alt="" class="prod-img">
+                <h3>{{item.nev}}</h3>
+                <h4>{{item.ar}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

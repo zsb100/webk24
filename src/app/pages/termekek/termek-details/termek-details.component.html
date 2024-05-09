@@ -1,0 +1,57 @@
+<div class="main-content">
+
+    <h1>{{termek.nev}}</h1>
+
+    <div class="admin-buttons" *ngIf="admin">
+        <button mat-raised-button color="primary" (click)="edit()">Szerkesztés</button>
+        <button mat-raised-button color="warn" (click)="delete(termek.id)">Törlés</button>
+    </div>
+
+    <div class="container">
+        <div class="img-container">
+            <img src="{{termek.imgLink}}" alt="" class="prod-img">
+        </div>
+
+        <div class="text-container">
+            <h3>{{termek.ar}} Ft</h3>
+            <p>
+                Termék anyaga:<br>
+            </p>
+            <ul>
+                <li *ngFor="let item of termek.anyag">{{item}}</li>
+            </ul>
+
+            <button mat-raised-button color="primary" (click)="addToCart()">Kosárba</button>
+
+        </div>
+    </div>
+
+
+    <div class="review-container">
+        <h2>Vélemények</h2>
+
+
+        <div class="review-form" *ngIf="loggedin">
+            <h3>Vélemény írása</h3>
+            <div class="rating">
+                <mat-icon class="star" *ngFor="let i of [1, 2, 3, 4, 5]" (click)="setRating(i)" color="primary">
+                    {{ score >= i ? 'star' : 'star_border' }}
+                </mat-icon>
+            </div>
+            <div class="description">
+                <mat-form-field>
+                    <mat-label>Vélemény</mat-label>
+                    <textarea matInput [formControl]="leiras" rows="6"></textarea>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" (click)="addVelemeny()">Küldés</button>
+
+        </div>
+
+        <app-list-velemeny [id]="termekId"></app-list-velemeny>
+    </div>
+
+
+
+
+</div>

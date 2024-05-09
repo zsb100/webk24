@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div>
+        <h1>Profil</h1>
+
+        <form [formGroup]="edit" *ngIf="szerkesztheto">
+            <mat-form-field>
+                <mat-label for="name">Név</mat-label>
+                <input matInput formControlName="name" placeholder="{{user?.nev}}" value="{{user?.nev}}">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label for="password">Jelszó</mat-label>
+                <input matInput formControlName="password" type="password" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="passwordagain">Jelszó ismét</mat-label>
+                <input matInput formControlName="passwordagain" type="password" required>
+            </mat-form-field>
+
+            <button  mat-raised-button color="primary" type="submit" (click)="editUser()">Mentés</button>
+            <button  mat-raised-button color="primary" type="button" (click)="szerkesztheto=false">Mégse</button>
+        </form>
+        <form  *ngIf="!szerkesztheto">
+            <mat-form-field>
+                <mat-label for="nev">Név</mat-label>
+                <input matInput name="nev" value="{{user?.nev}}" readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="mail">E-mail cím</mat-label>
+                <input matInput name="mail" value="{{user?.email}}" readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="jog">Jogosultság</mat-label>
+                <input matInput name="jog" value="{{user?.jogosultsag}}" readonly>
+            </mat-form-field>
+            <button *ngIf="!szerkesztheto" mat-raised-button color="primary" type="button" (click)="szerkesztheto=true">Szerkesztés</button>
+        </form>
+    </div>
+</div>

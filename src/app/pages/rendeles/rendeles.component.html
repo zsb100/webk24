@@ -1,0 +1,40 @@
+<div class="main-content">
+    <h1>Új rendelés</h1>
+
+    <form [formGroup]="cim">
+        <h2>Cím adatok:</h2>
+        <mat-form-field>
+            <mat-label for="irsz">Irányítószám</mat-label>
+            <input type="number" matInput formControlName="irsz">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="varos">Város</mat-label>
+            <input type="text" matInput formControlName="varos">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="utca">Utca</mat-label>
+            <input type="text" matInput formControlName="utca">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="hazszam">Házszám</mat-label>
+            <input type="text" matInput formControlName="hazszam">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="orszag">Ország</mat-label>
+            <input type="text" matInput formControlName="orszag">
+        </mat-form-field>
+
+    </form>
+
+    <hr>
+
+    <h2>Kosár tartalma:</h2>
+
+    <p *ngFor="let item of ekszerek">{{item.nev}}: {{item.ar}} Ft</p>
+
+    <h3>Összesen: {{kosar.ossz_ar}} Ft</h3>
+
+    <button mat-raised-button color="primary" (click)="placeOrder()">Megrendelés</button>
+
+
+</div>

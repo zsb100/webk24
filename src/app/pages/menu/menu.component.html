@@ -1,0 +1,26 @@
+<header>
+    <div class="header">
+        <div *ngIf="!isOpen" (click)="isOpen=true"><a class="left"><mat-icon>menu</mat-icon></a></div>
+        <div *ngIf="isOpen" (click)="isOpen=false"><a class="left"><mat-icon>arrow_back</mat-icon></a></div>
+        <div>
+            <h1 routerLink="/">Ék-szer</h1>
+        </div>
+        <div><a routerLink="/cart" class="cart"><mat-icon>shopping_bag</mat-icon></a></div>
+    </div>
+</header>
+<div class="wrapper" *ngIf="isOpen">
+    <div class="sidebar">
+
+        <h1 (click)="isOpen=false" routerLink="/home-page">Ék-szer</h1>
+        <ul>
+            <li><a (click)="isOpen=false" routerLink="/home-page"><mat-icon>home</mat-icon> Kezdőlap</a></li>
+            <li><a (click)="isOpen=false" routerLink="/jewelrys"><mat-icon>search</mat-icon> Kínálatunk megtekintése</a></li>
+            <li><a (click)="isOpen=false" routerLink="/cart"><mat-icon>shopping_bag</mat-icon> Kosár</a></li>
+            <li><a (click)="isOpen=false" routerLink="/about"><mat-icon>info</mat-icon> Rólunk</a></li>
+            <li><a (click)="isOpen=false" routerLink="/contact"><mat-icon>perm_phone_msg</mat-icon> Kapcsolat</a></li>
+            <li *ngIf="!isLoggedIn()"><a (click)="isOpen=false" routerLink="/login"><mat-icon>login</mat-icon> Bejelentkezés</a></li>
+            <li *ngIf="isLoggedIn()"><a (click)="isOpen=false" routerLink="/profile"><mat-icon>person</mat-icon> Profil</a></li>
+            <li *ngIf="isLoggedIn()" class="klikk"><a (click)="logOut()"><mat-icon>logout</mat-icon> Kijelentkezés</a></li>
+        </ul>
+    </div>
+</div>

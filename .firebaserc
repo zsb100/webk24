@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ek-szer": {
+      "hosting": {
+        "ek-szer": [
+          "ek-szer"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ek-szer"
+  }
+}

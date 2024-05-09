@@ -1,0 +1,43 @@
+<div class="main-content">
+    <h1>Ékszer adatainak szerkesztése</h1>
+
+    <div class="form">
+        <mat-form-field>
+            <label for="ar">Ár</label>
+            <input matInput type="number" id="ar" [formControl]="ar" name="ar" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="nev">Név</label>
+            <input matInput type="text" id="nev" [formControl]="nev" name="nev" required>
+        </mat-form-field>
+
+        <section>
+            <h3>Anyagok:</h3>
+            <p>(Legfeljebb 3 anyag adható meg)</p>
+            <mat-form-field>
+                <mat-label for="anyag1">Anyag (1)</mat-label>
+                <input type="text" matInput [formControl]="anyag1" value="{{anyagok[0]}}">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="anyag2">Anyag (2)</mat-label>
+                <input type="text" matInput [formControl]="anyag2" value="{{anyagok[1]}}">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="anyag3">Anyag (3)</mat-label>
+                <input type="text" matInput [formControl]="anyag3" value="{{anyagok[2]}}">
+            </mat-form-field>
+        </section>
+
+
+        <input type="file" (change)="onFileSelected($event)">
+
+        <button mat-raised-button color="primary" (click)="uploadFile()">Kép feltöltése</button>
+
+
+        <section id="controls">
+            <button mat-raised-button color="primary" (click)="save()">Mentés</button>
+            <button mat-button mat-dialog-close>Mégse</button>
+        </section>
+    </div>
+
+</div>
