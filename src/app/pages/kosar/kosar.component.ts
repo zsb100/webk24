@@ -31,7 +31,6 @@ export class KosarComponent implements OnInit, OnDestroy {
         this.subscriptions.add(
           this.kosardb.getKosar(this.loggedin).subscribe(data => {
             this.kosar = data[0];
-            console.log(this.kosar);
             this.getekszerek();
           })
         );
@@ -40,11 +39,12 @@ export class KosarComponent implements OnInit, OnDestroy {
 
   getekszerek() {
     if (!this.kosar || this.kosar.ekszerIds.length == 0) return;
-    for (let ekszer of this.kosar.ekszerIds) {
+    this.ekszerek = [];
+    for (let i = 0; i < this.kosar.ekszerIds.length; i++) {
       this.subscriptions.add(
-        this.termekdb.getById(ekszer).subscribe(data => {
+        this.termekdb.getById(this.kosar.ekszerIds[i]).subscribe(data => {
           if (!data) return;
-          this.ekszerek.push(data);
+          this.ekszerek[i] = data;
         })
       );
 

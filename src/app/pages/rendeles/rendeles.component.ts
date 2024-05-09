@@ -107,10 +107,11 @@ export class RendelesComponent implements OnInit, OnDestroy {
     if (this.loggedin) {
       this.cimdb.create(cim).then(res => {
         this.rendelesdb.create(cim, this.loggedin, this.kosar).then(_ => {
+          this.subscriptions.unsubscribe();
           this.kosardb.delete(this.kosar.id).then(_ => {
             this.kosardb.create(this.loggedin).then(_ => {
               alert('Rendelés sikeres!');
-              this.router.navigate(['/rendeles']);
+              this.router.navigate(['/']);
             });
           })
         })

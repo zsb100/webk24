@@ -16,6 +16,7 @@ export class TermekekComponent implements OnInit, OnDestroy {
 
   products: Ekszer[] = [];
   admin: boolean = false;
+  rowcount: number = 1;
 
   constructor(private termekdb: TermekDbService, private dialog: MatDialog, private auth: AuthService) { }
 
@@ -25,6 +26,7 @@ export class TermekekComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.termekdb.getAll().subscribe(data => {
         this.products = data;
+        this.rowcount = Math.ceil(this.products.length / 4);
       })
     );
     this.subscriptions.add(

@@ -18,12 +18,12 @@ export class HomePageComponent implements OnInit {
     this.termekdb.getAll().subscribe((data: Ekszer[]) => {
       if (data.length) {
         for (let i = 0; i < 4 && i < data.length; i++) {
-          this.new.push(data[i]);
+          this.new[i] = data[i];
         }
       }
       if (data.length > 4) {
         for (let i = data.length-1; i > data.length-5; i--) {
-          this.new.push(data[i]);
+          this.best.push(data[i]);
         }
       }
     });

@@ -19,8 +19,6 @@ export class EditTermekComponent implements OnInit, OnDestroy {
   anyag2: FormControl = new FormControl('');
   anyag3: FormControl = new FormControl('');
 
-  anyagok: string[] = ['', '', ''];
-
   selectedFile: File | null = null;
 
   imgurl = '';
@@ -36,9 +34,9 @@ export class EditTermekComponent implements OnInit, OnDestroy {
       this.ar.setValue(this.termek?.ar);
       this.nev.setValue(this.termek?.nev);
       if (this.termek) {
-        this.termek.anyag.forEach((anyag) => {
-          this.anyagok.push(anyag);
-        });
+        this.anyag1.setValue(this.termek.anyag[0]);
+        this.anyag2.setValue(this.termek.anyag[1]);
+        this.anyag3.setValue(this.termek.anyag[2]);
       }
     }
   }
@@ -58,15 +56,7 @@ export class EditTermekComponent implements OnInit, OnDestroy {
     this.termek.ar = this.ar.value;
     this.termek.nev = this.nev.value;
 
-    if (this.anyag1.value) {
-      this.termek.anyag.push(this.anyag1.value);
-    }
-    if (this.anyag2.value) {
-      this.termek.anyag.push(this.anyag2.value);
-    }
-    if (this.anyag3.value) {
-      this.termek.anyag.push(this.anyag3.value);
-    }
+    this.termek.anyag = [this.anyag1.value, this.anyag2.value, this.anyag3.value];
 
     if (this.imgurl) {
       this.termek.imgLink = this.imgurl;

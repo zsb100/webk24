@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthService {
-  constructor(private auth: AngularFireAuth, private felhasznalodb: FelhasznaloDbService) {  }
+  constructor(private auth: AngularFireAuth, private felhasznalodb: FelhasznaloDbService) { }
 
   userId = '';
   admin = false;
@@ -44,10 +44,14 @@ export class AuthService {
   adminCheck(): Observable<boolean> {
     return new Observable<boolean>(observer => {
       this.loggedIn().subscribe(userid => {
-        this.felhasznalodb.getById(userid).subscribe(data => {
-          this.admin = (data?.jogosultsag === 'ADMIN');
-          observer.next(this.admin);
-        });
+        if (userid === '') {
+          observer.next(false);
+        } else {
+          this.felhasznalodb.getById(userid).subscribe(data => {
+            this.admin = (data?.jogosultsag === 'ADMIN');
+            observer.next(this.admin);
+          });
+        }
       });
     });
   }
