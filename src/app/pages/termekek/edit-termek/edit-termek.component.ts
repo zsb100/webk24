@@ -56,7 +56,15 @@ export class EditTermekComponent implements OnInit, OnDestroy {
     this.termek.ar = this.ar.value;
     this.termek.nev = this.nev.value;
 
-    this.termek.anyag = [this.anyag1.value, this.anyag2.value, this.anyag3.value];
+   if (this.anyag1.value) {
+     this.termek.anyag[0] = this.anyag1.value;
+   }
+    if (this.anyag2.value) {
+      this.termek.anyag[1] = this.anyag2.value;
+    }
+    if (this.anyag3.value) {
+      this.termek.anyag[2] = this.anyag3.value;
+    }
 
     if (this.imgurl) {
       this.termek.imgLink = this.imgurl;
