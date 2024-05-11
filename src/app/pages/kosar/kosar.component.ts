@@ -5,6 +5,7 @@ import { KosarDbService } from '../../shared/services/kosar-db.service';
 import { Kosar } from '../../shared/models/kosar';
 import { TermekDbService } from '../../shared/services/termek-db.service';
 import { AuthService } from '../../shared/services/auth/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-kosar',
@@ -20,7 +21,7 @@ export class KosarComponent implements OnInit, OnDestroy {
   ekszerek: Ekszer[] = [];
 
 
-  constructor(private kosardb: KosarDbService, private termekdb: TermekDbService, private auth: AuthService) { }
+  constructor(private kosardb: KosarDbService, private termekdb: TermekDbService, private auth: AuthService, private snack: MatSnackBar) { }
 
   private subscriptions: Subscription = new Subscription();
 
@@ -48,9 +49,9 @@ export class KosarComponent implements OnInit, OnDestroy {
           this.ekszerek[i] = data;
         })
       );
-
     }
   }
+
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();

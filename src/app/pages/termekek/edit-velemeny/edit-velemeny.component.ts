@@ -69,8 +69,4 @@ export class EditVelemenyComponent implements OnInit, OnDestroy {
 
   }
 
-
-
-
-
 }

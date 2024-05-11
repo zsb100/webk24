@@ -66,16 +66,15 @@ export class RendelesComponent implements OnInit, OnDestroy {
   }
 
   getekszerek() {
-    if (!this.kosar) return;
-    for (let ekszer of this.kosar.ekszerIds) {
+    if (!this.kosar || this.kosar.ekszerIds.length == 0) return;
+    this.ekszerek = [];
+    for (let i = 0; i < this.kosar.ekszerIds.length; i++) {
       this.subscriptions.add(
-        this.termekdb.getById(ekszer).subscribe(data => {
-          if (data) {
-            this.ekszerek.push(data);
-          }
+        this.termekdb.getById(this.kosar.ekszerIds[i]).subscribe(data => {
+          if (!data) return;
+          this.ekszerek[i] = data;
         })
       );
-
     }
   }
 
