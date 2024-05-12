@@ -45,14 +45,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomeAboutModule,
     HomePageModule,
     ContactModule,
-    AngularFireModule.initializeApp({"projectId":"ek-szer","appId":"1:316942827154:web:06f975e9b102244691b04b","storageBucket":"ek-szer.appspot.com","apiKey":"AIzaSyBEsMeG5ApKd32XZlfejr1MWhyL61Fiv1w","authDomain":"ek-szer.firebaseapp.com","messagingSenderId":"316942827154"}),
+    AngularFireModule.initializeApp({"projectId":"ek-szer","appId":"1:316942827154:web:06f975e9b102244691b04b","storageBucket":"ek-szer.appspot.com","apiKey":"","authDomain":"ek-szer.firebaseapp.com","messagingSenderId":"316942827154"}),
     AngularFireAuthModule,
     AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp({
       projectId: 'ek-szer',
       appId: '1:316942827154:web:06f975e9b102244691b04b',
       storageBucket: 'ek-szer.appspot.com',
-      apiKey: 'AIzaSyBEsMeG5ApKd32XZlfejr1MWhyL61Fiv1w',
+      apiKey: '',
       authDomain: 'ek-szer.firebaseapp.com',
       messagingSenderId: '316942827154'
     })),
