@@ -66,9 +66,7 @@ export class KosarComponent implements OnInit, OnDestroy {
       this.kosar.ossz_ar -= this.ekszerek[index].ar;
       this.kosar.ekszerIds.splice(index, 1);
       this.ekszerek.splice(index, 1);
-      this.kosardb.update(this.kosar).then(() => {;
-      window.location.reload();  
-      });
+      this.kosardb.update(this.kosar);
     }
   }
 

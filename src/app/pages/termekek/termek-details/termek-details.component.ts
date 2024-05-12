@@ -115,8 +115,7 @@ export class TermekDetailsComponent implements OnInit, OnDestroy {
     }
 
     this.velemenydb.create(velemeny).then(() => {
-      alert('Sikeres értékelés!');
-      window.location.reload();
+      this.snack.open('Sikeres értékelés', 'OK', { duration: 2000 });
     });
 
   }

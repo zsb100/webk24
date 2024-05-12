@@ -2,7 +2,7 @@
     <h1>Kosár</h1>
 
     <div class="kosar-items">
-        <span *ngIf="ekszerek.length == 0">
+        <span *ngIf="ekszerek.length == 0 && loggedin">
             <p>A kosár üres.</p>
             <button mat-raised-button color="primary" routerLink="/jewelrys">Kínálatunk megtekintése</button>
         </span>
@@ -13,7 +13,6 @@
         </span>
 
         <div *ngFor="let item of ekszerek" class="kosar-item">
-
             <div class="kosar-item-img">
                 <img src="{{item.imgLink}}">
             </div>
